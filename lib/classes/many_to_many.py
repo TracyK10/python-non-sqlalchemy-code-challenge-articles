@@ -129,3 +129,9 @@ class Magazine:
         from collections import Counter
         author_count = Counter(article.author for article in self.articles())
         return [author for author,count in author_count.items() if count > 2]
+    
+    @classmethod
+    def top_publisher(self):
+        """Returns the Magazine instance with the most articles | Returns None if there are no articles."""
+        if not Article.all_articles:
+            return None
